@@ -6,7 +6,7 @@
 #    By: ejuana <ejuana@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 14:52:16 by ejuana            #+#    #+#              #
-#    Updated: 2020/03/08 05:01:20 by ejuana           ###   ########.fr        #
+#    Updated: 2020/03/12 02:11:07 by ejuana           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -127,6 +127,6 @@ re: fclean all
 
 norm:
 	@norminette | grep Error
-	
+
 .PHONY: all clean fclean re norm
 
