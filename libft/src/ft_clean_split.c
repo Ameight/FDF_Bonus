@@ -6,13 +6,13 @@
 /*   By: ejuana <ejuana@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 03:49:42 by ejuana            #+#    #+#             */
-/*   Updated: 2020/03/12 03:55:19 by ejuana           ###   ########.fr       */
+/*   Updated: 2020/03/12 04:59:25 by ejuana           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_splitdel(char ***arr)
+int		ft_clean_split(char ***arr)
 {
 	char	**str;
 	int		i;

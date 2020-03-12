@@ -4,16 +4,10 @@ LIBFT 		= libft.a
 CUR_DIR 	= $(shell pwd)
 LIB_DIR 	= $(CUR_DIR)/libft
 OBJ_DIR 	= $(CUR_DIR)/objects
-SRC_DIR		= $(CUR_DIR)/sources
+SRC_DIR		= $(CUR_DIR)/src
 
-SRC			=	main.c 			\
-      			brezeham.c      \
-				draw_dots.c     \
-				events.c        \
-				fdf.c           \
-				parser.c        \
-				s_lines.c       \
-				s_point.c 		
+SRC			=	parser.c 		\
+      			f1.c      	
 
 OBJ 		=	$(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: ejuana <ejuana@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 05:20:28 by ejuana            #+#    #+#             */
-/*   Updated: 2020/03/12 03:55:23 by ejuana           ###   ########.fr       */
+/*   Updated: 2020/03/12 05:12:29 by ejuana           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ static int	get_lines(int fd, t_list **lst)
 	ft_lstrev(lst);
 	return (1);
 }
-
-void		find_depth(t_map *m)
+/*
+void		find_depth(t_map *map)
 {
 	int			min;
 	int			max;
@@ -76,12 +76,12 @@ void		find_depth(t_map *m)
 	min = INT_MAX;
 	max = INT_MIN;
 	v.y = 0;
-	while (v.y < m->height)
+	while (v.y < map->height)
 	{
 		v.x = 0;
-		while (v.x < m->width)
+		while (v.x < map->width)
 		{
-			cur = *m->points[(int)v.y * m->width + (int)v.x];
+			cur = *map->points[(int)v.y * map->width + (int)v.x];
 			if (cur.z < min)
 				min = cur.z;
 			if (cur.z > max)
@@ -90,11 +90,11 @@ void		find_depth(t_map *m)
 		}
 		v.y++;
 	}
-	m->depth_min = min;
-	m->depth_max = max;
+	map->depth_min = min;
+	map->depth_max = max;
 }
-
-static int	populate_map(t_map **m, t_list *list)
+*/
+static int	populate_map(t_map **map, t_list *list)
 {
 	t_list	*lst;
 	char	**arr_dots;
@@ -103,35 +103,51 @@ static int	populate_map(t_map **m, t_list *list)
 
 	lst = list;
 	y = 0;
-	while (y < (*m)->height)
+	while (y < (*map)->height)
 	{
 		x = 0;
 		if (!(arr_dots = ft_strsplit(lst->content, ' ')))
-			return (clean_lst(&list, m));
-		while (x < (*m)->width)
+			return (clean_lst(&list, map));
+		while (x < (*map)->width)
 		{
-			(*m)->points[y * (*m)->width + x] = get_vector(x, y, arr_dots[x]);
+			(*map)->points[y * (*map)->width + x] = get_point(x, y, arr_dots[x]);
 			x++;
 		}
-		ft_clen_split(&arr_dots);
+		ft_clean_split(&arr_dots);
 		lst = lst->next;
 		y++;
 	}
-	find_depth(*m);
-	fill_colors(*m);
+	//find_depth(*map);
+	//fill_colors(*map);
 	clean_lst(&list, NULL);
+	/*
+	#include "stdio.h"
+	int i;
+	int j;
+
+	i = 0;
+	while(i < (*map)->height)
+	{
+		j = 0;
+		while(j < (*map)->width)
+		{
+			printf("%d",(*map)->points[j]);
+			j++;
+		}
+	}
+	*/
 	return (1);
 }
 
-int			read_file(int fd, t_map **m)
+int			read_file(int fd, t_map **map)
 {
 	t_list	*lst;
 
 	lst = NULL;
 	if (!(get_lines(fd, &lst)))
 		return (0);
-	*m = get_map(ft_countwords(lst->content, ' '), ft_lstcount(lst));
-	if (*m == NULL)
-		return (clean_lst(&lst, m));
-	return (populate_map(m, lst));
+	*map = get_map(ft_word_counter(lst->content, ' '), ft_lstcount(lst));
+	if (*map == NULL)
+		return (clean_lst(&lst, map));
+	return (populate_map(map, lst));
 }

@@ -6,7 +6,7 @@
 /*   By: ejuana <ejuana@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 14:59:16 by ejuana            #+#    #+#             */
-/*   Updated: 2020/03/12 03:53:47 by ejuana           ###   ########.fr       */
+/*   Updated: 2020/03/12 05:11:35 by ejuana           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,9 @@ void				ft_swap_int(int *a, int *b);
 void				ft_lstclr(t_list *lst);
 int					ft_wdcounter(char const *str, char c);
 int					ft_word_counter(char const *s, char c);
-int					ft_splitdel(char ***arr);
+int					ft_clean_split(char ***arr);
+void				ft_lstrev(t_list **alst);
+size_t				ft_lstcount(t_list *lst);
 
 char				*ft_strdup_safe(const char *s1);
 char				*ft_strchr_safe(const char *s, int c);

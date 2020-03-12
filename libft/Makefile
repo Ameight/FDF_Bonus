@@ -6,7 +6,7 @@
 #    By: ejuana <ejuana@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 14:52:16 by ejuana            #+#    #+#              #
-#    Updated: 2020/03/12 03:54:25 by ejuana           ###   ########.fr        #
+#    Updated: 2020/03/12 05:11:03 by ejuana           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,8 @@ SRC_FC 			+=	ft_lstnew.c			\
 					ft_lstdel.c			\
 					ft_lstadd.c			\
 					ft_lstiter.c		\
-					ft_lstmap.c			
+					ft_lstmap.c			\
+					ft_lstcount.c
 
 SRC_FC			+=	ft_swap_int.c		\
 					ft_len_char.c		\
@@ -99,7 +100,8 @@ SRC_FC			+=	ft_strdup_safe.c	\
 SRC_FC			+=	get_next_line.c		\
 					ft_wdcounter.c		\
 					ft_word_counter.c	\
-					ft_splitdel.c
+					ft_clean_split.c	\
+					ft_lstrev.c
 					
 SRC_C 			= 	$(addprefix $(SRC_DIR)/, $(SRC_FC))
 
