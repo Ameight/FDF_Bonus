@@ -6,7 +6,7 @@
 /*   By: ejuana <ejuana@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 05:20:28 by ejuana            #+#    #+#             */
-/*   Updated: 2020/03/12 03:40:52 by ejuana           ###   ########.fr       */
+/*   Updated: 2020/03/12 03:55:23 by ejuana           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ static int	populate_map(t_map **m, t_list *list)
 			(*m)->points[y * (*m)->width + x] = get_vector(x, y, arr_dots[x]);
 			x++;
 		}
-		ft_splitdel(&arr_dots);
+		ft_clen_split(&arr_dots);
 		lst = lst->next;
 		y++;
 	}

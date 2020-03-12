@@ -6,7 +6,7 @@
 #    By: ejuana <ejuana@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 14:52:16 by ejuana            #+#    #+#              #
-#    Updated: 2020/03/12 02:11:07 by ejuana           ###   ########.fr        #
+#    Updated: 2020/03/12 03:54:25 by ejuana           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,7 +98,8 @@ SRC_FC			+=	ft_strdup_safe.c	\
 
 SRC_FC			+=	get_next_line.c		\
 					ft_wdcounter.c		\
-					ft_word_counter.c
+					ft_word_counter.c	\
+					ft_splitdel.c
 					
 SRC_C 			= 	$(addprefix $(SRC_DIR)/, $(SRC_FC))
 
@@ -129,4 +130,3 @@ norm:
 	@norminette | grep Error
 
 .PHONY: all clean fclean re norm
-
